@@ -8,6 +8,7 @@
     * {
       box-sizing: border-box;
     }
+
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
@@ -17,12 +18,15 @@
       color: #333;
       scroll-behavior: smooth;
     }
+
     header {
       background-color: #006699;
       color: white;
       padding: 2rem 1rem;
       text-align: center;
+      animation: fadeIn 1s ease-in;
     }
+
     nav {
       background-color: #004466;
       padding: 0.5rem 1rem;
@@ -34,42 +38,69 @@
       top: 0;
       z-index: 1000;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      transition: transform 0.3s ease, text-decoration 0.3s;
     }
+
     nav a:hover {
+      transform: scale(1.1);
       text-decoration: underline;
     }
+
     section {
       max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
     }
+
+    section:nth-child(even) {
+      animation-delay: 0.3s;
+    }
+
     img {
       max-width: 100%;
       height: auto;
       border: 1px solid #ccc;
       border-radius: 8px;
       margin-top: 1rem;
+      transition: transform 0.3s ease;
     }
+
+    img:hover {
+      transform: scale(1.02);
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
       background-color: #f0f0f0;
       font-size: 0.9rem;
+      animation: fadeIn 1s ease-in;
     }
+
     #contact {
       background-color: #f9f9f9;
       padding: 1.5rem;
       border-radius: 10px;
     }
+
     @media (max-width: 600px) {
       nav {
         flex-direction: column;
         align-items: center;
       }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -77,7 +108,7 @@
 
   <header>
     <h1>Conor Taylor | Portfolio</h1>
-    <p>Aspiring data analyst currently studying biology at University of Brighton</p>
+    <p>Aspiring Data analyst currently studying biology at University of Brighton</p>
   </header>
 
   <nav>
@@ -125,13 +156,13 @@
 
   <section id="contact">
     <h2>Contact</h2>
-    <p><strong>Email:</strong> <a href="mailto:your.email@example.com">conorwtaylor@gmail.com</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/your-profile" target="_blank">https://www.linkedin.com/in/conor-taylor/</a></p>
+    <p><strong>Email:</strong> <a href="mailto:conorwtaylor@gmail.com">conorwtaylor@gmail.com</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/conor-taylor/" target="_blank">linkedin.com/in/conor-taylor</a></p>
     <p><strong>GitHub:</strong> <a href="https://github.com/your-username" target="_blank">github.com/your-username</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Conor Taylor </p>
+    <p>&copy; 2025 Conor Taylor.</p>
   </footer>
 
 </body>
